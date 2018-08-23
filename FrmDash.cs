@@ -277,10 +277,19 @@ namespace CaryDashboard
                 btnCustom3.Text = "Custom Btn 3";
                 btnCustom4.Text = "Custom Btn 4";
                 btnCustom5.Text = "Custom Btn 5";
+
+                btnCustom1.Enabled = false;
+                btnCustom2.Enabled = false;
+                btnCustom3.Enabled = false;
+                btnCustom4.Enabled = false;
+                btnCustom5.Enabled = false;
             }
         }
 
         //Custom Buttons
+
+        //Try-Catch statements are used to protect against dysfunctional custom buttons
+        //and warn users of their mistake
 
         //Instantiate the button customization form and pass this form (main form) in
         private void btnCustomize_Click(object sender, EventArgs e)
@@ -292,32 +301,67 @@ namespace CaryDashboard
         //Event handler launches accoridng to custom parameters defined by yser
         private void btnCustom1_Click(object sender, EventArgs e)
         {
-            Process.Start(Properties.Settings.Default.btn1Launcher, @Properties.Settings.Default.btn1Path);
+            try
+            {
+                Process.Start(Properties.Settings.Default.btn1Launcher, @Properties.Settings.Default.btn1Path);
+            }
+            catch
+            {
+                MessageBox.Show("Invalid button parameters. Please overwrite.");
+            }
         }
 
         //Event handler launches accoridng to custom parameters defined by yser
         private void btnCustom2_Click(object sender, EventArgs e)
         {
-            Process.Start(Properties.Settings.Default.btn2Launcher, @Properties.Settings.Default.btn2Path);
+            try
+            {
+                Process.Start(Properties.Settings.Default.btn2Launcher, @Properties.Settings.Default.btn2Path);
+            }
+            catch
+            {
+                MessageBox.Show("Invalid button parameters. Please overwrite.");
+            }
         }
 
         //Event handler launches accoridng to custom parameters defined by yser
         private void btnCustom3_Click(object sender, EventArgs e)
         {
-            Process.Start(Properties.Settings.Default.btn3Launcher, @Properties.Settings.Default.btn3Path);
+            try
+            {
+                Process.Start(Properties.Settings.Default.btn3Launcher, @Properties.Settings.Default.btn3Path);
+            }
+            catch
+            {
+                MessageBox.Show("Invalid button parameters. Please overwrite.");
+            }
         }
 
         //Event handler launches accoridng to custom parameters defined by yser
         private void btnCustom4_Click(object sender, EventArgs e)
         {
-            Process.Start(Properties.Settings.Default.btn4Launcher, @Properties.Settings.Default.btn4Path);
+            try
+            {
+                Process.Start(Properties.Settings.Default.btn4Launcher, @Properties.Settings.Default.btn4Path);
+            }
+            catch
+            {
+                MessageBox.Show("Invalid button parameters. Please overwrite.");
+            }
         }
 
         //Event handler launches accoridng to custom parameters according to user configuration settings
         //Project -> Properties -> Settings
         private void btnCustom5_Click(object sender, EventArgs e)
         {
-            Process.Start(Properties.Settings.Default.btn5Launcher, @Properties.Settings.Default.btn5Path);
+            try
+            {
+                Process.Start(Properties.Settings.Default.btn5Launcher, @Properties.Settings.Default.btn5Path);
+            }
+            catch
+            {
+                MessageBox.Show("Invalid button parameters. Please overwrite.");
+            }
         }
 
         //Event handler updates custom buttons when entering the custom tab according to user configuration settings

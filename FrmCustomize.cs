@@ -249,14 +249,30 @@ namespace CaryDashboard
         //Function checks whether or not all fields have entries
         private void fieldsCheck()
         {
-            if (cmboxBtnSelect != null && cmboxLinkSelect.SelectedItem != null &&
-                txtPathEntry.Text != "" && txtNameEntry.Text != "")
-                if (cmboxLinkSelect.SelectedIndex == 2 && txtExecutable.Text == "")
-                    btnCreate.Enabled = false;
-                else
+            if (cmboxLinkSelect.SelectedIndex == 0 || cmboxLinkSelect.SelectedIndex == 1 || cmboxLinkSelect.SelectedIndex == 3)
+            {
+                if (cmboxBtnSelect != null && cmboxLinkSelect.SelectedItem != null &&
+                    txtPathEntry.Text != "" && txtNameEntry.Text != "")
                 {
                     btnCreate.Enabled = true;
                 }
+                else
+                {
+                    btnCreate.Enabled = false;
+                }
+            }
+            else if (cmboxLinkSelect.SelectedIndex == 2)
+            {
+                if (cmboxBtnSelect != null && cmboxLinkSelect.SelectedItem != null && 
+                    txtExecutable.Text != "" && txtNameEntry.Text != "")
+                {
+                    btnCreate.Enabled = true;
+                }
+                else
+                {
+                    btnCreate.Enabled = false;
+                }
+            }
         }
     }
 }
